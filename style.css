@@ -19,6 +19,7 @@ body {
   overflow-x: hidden;
   text-align: center;
   line-height: 1.5;
+  overflow-x: hidden;
 
 }
 
@@ -37,15 +38,21 @@ a {
   list-style: none;
 }
 
+
 .btn {
-  border-radius: 35px;
-  -moz-border-radius: 35px;
-  -webkit-border-radius: 35px;
   background-color: #2bcdcc;
   color: white;
   border: none;
   text-align: center;
 }
+
+.btnSa {
+  border-radius: 35px;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+}
+
+
 
 
 /*Mobile Styles*/
@@ -66,6 +73,8 @@ a {
   color: hsl(0, 0%, 75%);
 
 }
+
+/* Section A */
 
 #section-a img {
   width: 132.5%;
@@ -96,4 +105,194 @@ a {
   padding-bottom: 1em;
   font-size: 18px;
   font-weight: bold;
+}
+
+/* Section B */
+
+#section-b div {
+  z-index: -1;
+  border-radius: 10px;
+  margin-top: 90px;
+  margin-left: 25px;
+  height: 158px;
+  width: 325px;
+  background-image: url("images/bg-shorten-mobile.svg");
+  background-color: #383055;
+  background-repeat: no-repeat;
+  background-position: top right;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+#section-b input,
+button {
+  height: 46px;
+  border-radius: 5px;
+  border: none;
+  margin-left: 24px;
+}
+
+#section-b input {
+  width: 260px;
+  margin-top: 24px;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  font-weight: 500;
+  font-size: 16px;
+  color: hsl(257, 7%, 63%);
+}
+
+#section-b button {
+  width: 275px;
+  height: 48px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* Section C */
+
+#section-c {
+  padding-top: 136px;
+  background: #f0f1f6;
+  z-index: 1;
+  padding-bottom: 80px;
+}
+
+#section-c .title2 {
+  font-weight: 900;
+  font-size: 26px;
+  color: #34313D;
+  margin-bottom: 0px;
+}
+
+#section-c .text2 {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0px 16px;
+  color: hsl(257, 7%, 63%);
+  margin-bottom: 0px;
+  padding-bottom: 2em;
+  line-height: 1.9;
+}
+
+#section-c .card {
+  background: white;
+  height: 266px;
+  width: 328px;
+  margin-left: 24px;
+  border-radius: 5px;
+  margin-bottom: 92px;
+}
+
+#section-c .card2 {
+  height: 283px;
+}
+
+#section-c .card3 {
+  margin-bottom: 0px;
+}
+
+#section-c ul {
+  padding-left: 0;
+  padding-top: 23px;
+}
+
+.title-card {
+  font-weight: 900;
+  font-size: 21px;
+  color: #34313D;
+  margin-bottom: 0px;
+  padding-top: 76px;
+}
+
+.text-card {
+  font-weight: 500;
+  font-size: 15px;
+  padding: 0px 30px;
+  color: hsl(257, 7%, 63%);
+  margin-bottom: 0px;
+  padding-bottom: 2em;
+  line-height: 1.9;
+}
+
+/*Section D*/
+
+#section-d {
+  width: 375px;
+  height: 298px;
+  margin-top: -17px;
+  background-image: url("images/bg-boost-mobile.svg");
+  background-color: #383055;
+  background-repeat: no-repeat;
+  background-position: top right;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+#section-d .title {
+  font-weight: 900;
+  font-size: 26px;
+  color: white;
+  margin-bottom: 0px;
+  padding-top: 71px;
+}
+
+.btnSection-d {
+  height: 56px;
+  width: 195px;
+  margin-top: 16px;
+  margin-left: 0px;
+  border-radius: 35px;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+  font-weight: 900;
+  font-size: 19px;
+}
+
+/*Section f*/
+
+#section-f {
+  background-color: hsl(260, 8%, 14%);
+}
+
+#section-f .img_logo {
+  display: inline;
+  margin-top: 0px;
+  padding-top: 55px;
+  width: 123px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(172deg) brightness(106%) contrast(105%);
+
+}
+
+#section-f .card {
+  margin-top: 43px;
+}
+
+#section-f .card2 {
+  margin-top: 36px;
+}
+
+#section-f p {
+  font-weight: 900;
+  font-size: 15px;
+  color: white;
+}
+
+#section-f li {
+  color: hsl(257, 7%, 63%);
+  font-size: 15px;
+  line-height: 2.1;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 104px;
+  padding-bottom: 55px;
+}
+
+#section-f .redes {
+  width: 24px;
 }
