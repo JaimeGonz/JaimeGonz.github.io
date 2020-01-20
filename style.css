@@ -11,7 +11,7 @@ p {
 
 header {
   width: 100%;
-  height: 50px;
+  height: 54px;
 }
 
 body {
@@ -20,6 +20,7 @@ body {
   text-align: center;
   line-height: 1.5;
   overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
 
 }
 
@@ -53,13 +54,11 @@ a {
 }
 
 
-
-
 /*Mobile Styles*/
 
 #showcase {
   display: flex;
-  padding-top: 40px;
+  margin-top: 38px;
 }
 
 #showcase img {
@@ -69,24 +68,30 @@ a {
 
 #menu {
   margin-left: auto;
-  padding-right: 25px;
+  padding-right: 45px;
   color: hsl(0, 0%, 75%);
 
 }
 
 /* Section A */
 
+#section-a {
+  margin-bottom: 168px;
+  overflow: hidden;
+}
+
 #section-a img {
-  width: 132.5%;
+  width: 495px;
   padding-left: 24px;
 }
 
 #section-a .title {
   font-weight: 900;
-  font-size: 40px;
+  font-size: 41px;
   color: #34313D;
   margin-bottom: 0px;
   line-height: 1.2;
+  margin-top: 56px;
 }
 
 #section-a .text {
@@ -96,23 +101,31 @@ a {
   color: hsl(257, 7%, 63%);
   margin-bottom: 0px;
   padding-bottom: 2em;
+  margin-top: 14px;
+
 }
 
 #section-a button {
-  width: 190px;
+  width: 197px;
   height: 55px;
   line-height: 55px;
   padding-bottom: 1em;
   font-size: 18px;
   font-weight: bold;
+  margin-left: 3px;
 }
 
 /* Section B */
 
+#section-b {
+  position: absolute;
+  margin-top: -169px;
+}
+
 #section-b div {
   z-index: -1;
   border-radius: 10px;
-  margin-top: 90px;
+  margin-top: 91px;
   margin-left: 25px;
   height: 158px;
   width: 325px;
@@ -161,9 +174,10 @@ button {
 
 #section-c .title2 {
   font-weight: 900;
-  font-size: 26px;
+  font-size: 27px;
   color: #34313D;
   margin-bottom: 0px;
+  margin-top: 30px;
 }
 
 #section-c .text2 {
@@ -191,6 +205,34 @@ button {
 
 #section-c .card3 {
   margin-bottom: 0px;
+}
+
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  height: 88px;
+  width: 88px;
+  background: #3a3053;
+  margin-left: 143px;
+  margin-top: -44px;
+}
+
+.img_circle {
+  position: absolute;
+  width: 40px;
+  height: auto;
+  margin-top: 24px;
+  margin-left: 24px;
+}
+
+.line {
+  position: absolute;
+  background: #2bcdcc;
+  height: 50px;
+  width: 8px;
+  margin-top: -90px;
+  margin-left: 184px;
 }
 
 #section-c ul {
@@ -289,10 +331,66 @@ button {
 .icons {
   display: flex;
   justify-content: space-around;
-  margin: 0 104px;
+  margin: 0 94px;
   padding-bottom: 55px;
 }
 
 #section-f .redes {
   width: 24px;
+}
+
+
+
+/*Barra de Navegación*/
+
+#myLinks {
+  position: absolute;
+  font-size: 12px;
+  height: 383px;
+  width: 325px;
+  background: #3a3053;
+  border-radius: 10px;
+  margin-left: 24px;
+}
+
+/* El boton que saca la barra*/
+#showcase a.icon {
+  background: white;
+  color: hsl(257, 7%, 63%);
+  position: absolute;
+}
+
+.btn-menu {
+  width: 278px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 24px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin: 0 15px;
+}
+
+.option {
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.option2 {
+  margin-top: 30px;
+}
+
+.option-border {
+  padding-top: 30px;
+  margin: 0 24px;
+  margin-top: 30px;
+  border-top: 1px #473d60 solid;
 }
