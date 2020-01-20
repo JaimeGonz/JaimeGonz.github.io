@@ -1,83 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
+    type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
 
-  Features
-  Pricing
-  Resources
+<body class="scroll">
 
-  Login
-  Sign Up
+  <section class="main-container">
+    <header id="showcase" class="topnav">
+      <li><img src="images/logo.svg" alt="Logo Shortly" class="active"></li>
+      <li id="menu"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars fa-2x"></i>
+        </a>></li>
+    </header>
 
-  More than just shorter links
+    <div id="myLinks" class="menu card2">
+      <a href="#features" class="option">Features</a>
+      <a href="#pricing" class="option option2">Pricing</a>
+      <a href="#resources" class="option option2">Resources</a>
+      <a href="#login" class="option option-border">Login</a>
+      <a href="#signup" class="option option2 btn btnSa btn-menu">Sign up</a>
+    </div>
 
-  Build your brand’s recognition and get detailed insights 
-  on how your links are performing.
+    <main id="main">
+      <section id="section-a">
+        <div class="">
+          <img src="images/illustration-working.svg" alt="">
+        </div>
+        <div>
+          <p class="title">More than just shorter links</p>
+          <p class="text">Build your brand’s recognition and get detailed insights
+            on how your links are performing.</p>
+          <button type="button" class="btn btnSa"> Get Started</button>
+        </div>
+      </section>
 
-  Get Started
+      <section id="section-b">
+        <div>
+          <input type="text" placeholder="Shorten a link here...">
+          <button type="button" class="btn">Shorten It!</button>
+        </div>
+      </section>
 
-  Shorten It!
+      <section id="section-c">
+        <div>
+          <p class="title2">Advanced Statistics</p>
+          <p class="text2">Track how your links are performing across the web with our
+            advanced statistics dashboard.</p>
+        </div>
+        <ul>
+          <li>
+            <div class="circle">
+              <img src="images/icon-brand-recognition.svg" alt="" class="img_circle">
+            </div>
+            <div id="card1" class="card">
+              <p class="title-card">Brand Recognition</p>
+              <p class="text-card">Boost your brand recognition with each click. Generic links don’t
+                mean a thing. Branded links help instil confidence in your content.</p>
+            </div>
+            <div class="line"></div>
+            <div class="circle">
+              <img src="images/icon-detailed-records.svg" alt="" class="img_circle">
+            </div>
+            <div id="card2" class="card card2">
+              <p class="title-card">Detailed Records</p>
+              <p class="text-card">Gain insights into who is clicking your links. Knowing when and where
+                people engage with your content helps inform better decisions.</p>
+            </div>
 
-  Advanced Statistics
+            <div class="line"></div>
+            <div class="circle">
+              <img src="images/icon-fully-customizable.svg" alt="" class="img_circle">
+            </div>
+            <div id="card3" class="card card3">
+              <p class="title-card">Fully Customizable</p>
+              <p class="text-card">Improve brand awareness and content discoverability through customizable links,
+                supercharging audience
+                engagement.</p>
+            </div>
 
-  Track how your links are performing across the web with our 
-  advanced statistics dashboard.
+          </li>
+        </ul>
 
-  Brand Recognition
+      </section>
 
-  Boost your brand recognition with each click. Generic links don’t 
-  mean a thing. Branded links help instil confidence in your content.
+      <section id="section-d">
+        <div>
+          <p class="title">Boost your links today</p>
+          <button type="button" class="btn btnSection-d">Get Started</button>
+        </div>
+      </section>
 
-  Detailed Records
+      <section id="section-f">
+        <div>
+          <img src="images/logo.svg" alt="Logo Shortly" class="img_logo">
+          <div class="card">
+            <p>Features</p>
+            <li>Link Shortening</li>
+            <li>Branded Links</li>
+            <li>Analytics</li>
+          </div>
 
-  Gain insights into who is clicking your links. Knowing when and where 
-  people engage with your content helps inform better decisions.
+          <div class="card2">
+            <p>Resources</p>
+            <li>Blog</li>
+            <li>Developers</li>
+            <li>Support</li>
+          </div>
 
-  Fully Customizable
+          <div class="card2">
+            <p>Company</p>
+            <li>About</li>
+            <li>Our Team</li>
+            <li>Careers</li>
+            <li>Contact</li>
+          </div>
 
-  Improve brand awareness and content discoverability through customizable 
-  links, supercharging audience engagement.
+          <div class="card icons">
+            <li class="redes"><img src="images/icon-facebook.svg"></li>
+            <li class="redes"><img src="images/icon-twitter.svg"></li>
+            <li class="redes"><img src="images/icon-pinterest.svg"></li>
+            <li class="redes"><img src="images/icon-instagram.svg"></li>
+          </div>
+        </div>
+      </section>
+    </main>
+  </section>
 
-  Boost your links today
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "flex") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "flex";
+      }
+    }
+  </script>
 
-  Get Started
-
-  Features
-
-  Link Shortening
-  Branded Links
-  Analytics
-
-  Resources
-
-  Blog
-  Developers
-  Support
-
-  Company
-
-  About
-  Our Team
-  Careers
-  Contact
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
+
+
+
 </html>
