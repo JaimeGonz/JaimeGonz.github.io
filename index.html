@@ -16,8 +16,6 @@
 
 <body class="scroll">
 
-
-
   <section class="main-container">
     <header id="showcase" class="topnav">
       <li><img src="images/logo.svg" alt="Logo Shortly" class="active"></li>
@@ -48,9 +46,11 @@
       </section>
 
       <section id="section-b">
-        <div>
-          <input type="text" placeholder="Shorten a link here...">
-          <button type="button" class="btn">Shorten It!</button>
+        <div id="shortener">
+          <input type="text" id="text" placeholder="Shorten a link here...">
+          <!-- onfocus="return validar()" -->
+          <p id="message" class="alertMessage">Please add a link</p>
+          <button type="button" class="btn" onclick="return validar()">Shorten It!</button>
         </div>
       </section>
 
@@ -149,6 +149,32 @@
       }
     }
   </script>
+
+  <script type="text/javascript">
+    function validar() {
+      //obteniendo el valor que se puso en el campo text del formulario
+      Texto = document.getElementById("text").value;
+      var container = document.getElementById("shortener");
+      var intro = document.getElementById('text');
+      var p = document.getElementById('message');
+      //la condición
+      if (Texto.length == 0 || /^\s+$/.test(Texto)) {
+        var intro = document.getElementById('text');
+        intro.classList.add('inputActive');
+        container.classList.add('divActive');
+        p.classList.remove('alertMessage');
+        p.classList.add('alertMessageActive');
+        return false;
+      }
+      intro.classList.remove('inputActive');
+      container.classList.remove('divActive');
+      p.classList.add('alertMessage')
+      p.classList.remove('alertMessageActive');
+      return true;
+    }
+  </script>
+
+
 
 </body>
 

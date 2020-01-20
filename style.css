@@ -138,6 +138,10 @@ a {
   align-content: space-around;
 }
 
+#section-b .divActive {
+  padding-top: 24px;
+}
+
 #section-b input,
 button {
   height: 46px;
@@ -156,11 +160,38 @@ button {
   color: hsl(257, 7%, 63%);
 }
 
+#section-b .inputActive {
+  border: 3px solid #e27476;
+  margin-top: 0px;
+  margin-bottom: 37px;
+  height: 40px;
+  width: 259px;
+}
+
+.alertMessage {
+  display: none;
+}
+
+.alertMessageActive {
+  margin: 0;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 24px;
+  font-size: 12px;
+  color: #e27476;
+  font-style: italic;
+  display: block;
+}
+
 #section-b button {
   width: 275px;
   height: 48px;
   font-weight: 500;
   font-size: 18px;
+}
+
+#section-b .buttonAvtive {
+  width: 278px;
 }
 
 /* Section C */
@@ -370,7 +401,7 @@ button {
 }
 
 .menu {
-  display: flex;
+  display: none;
   flex-direction: column;
   margin: 0 15px;
 }
