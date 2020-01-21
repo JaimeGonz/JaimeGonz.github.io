@@ -47,7 +47,8 @@
 
       <section id="section-b">
         <div id="shortener">
-          <input type="text" id="text" placeholder="Shorten a link here...">
+          <input type="text" id="text" placeholder="Shorten a link here..." onfocus="return validar()"
+            onblur="return validar1()">
           <!-- onfocus="return validar()" -->
           <p id="message" class="alertMessage">Please add a link</p>
           <button type="button" class="btn" onclick="return validar()">Shorten It!</button>
@@ -55,36 +56,47 @@
       </section>
 
       <section id="section-c">
-        <div>
+        <div id="hola"></div>
+
+        <!-- <div id="card-link" class="card-link">
+          <p class="title-card-link">https://www.frontendmentor.io</p>
+          <p class="text-card-link">https://rel.ink/k41Kyk</p>
+          <button type="button" class="btn btn-card-link">Copy</button>
+        </div> -->
+
+        <div id="AdvanceS">
           <p class="title2">Advanced Statistics</p>
           <p class="text2">Track how your links are performing across the web with our
             advanced statistics dashboard.</p>
         </div>
         <ul>
           <li>
-            <div class="circle">
+            <!-- <div class="circle">
               <img src="images/icon-brand-recognition.svg" alt="" class="img_circle">
-            </div>
+            </div> -->
             <div id="card1" class="card">
+              <div class="icon-container"><i class="icon"></i></div>
               <p class="title-card">Brand Recognition</p>
               <p class="text-card">Boost your brand recognition with each click. Generic links don’t
                 mean a thing. Branded links help instil confidence in your content.</p>
             </div>
             <div class="line"></div>
-            <div class="circle">
+            <!-- <div class="circle">
               <img src="images/icon-detailed-records.svg" alt="" class="img_circle">
-            </div>
+            </div> -->
             <div id="card2" class="card card2">
+              <div class="icon-container"><i class="icon icon2"></i></div>
               <p class="title-card">Detailed Records</p>
               <p class="text-card">Gain insights into who is clicking your links. Knowing when and where
                 people engage with your content helps inform better decisions.</p>
             </div>
 
             <div class="line"></div>
-            <div class="circle">
+            <!-- <div class="circle">
               <img src="images/icon-fully-customizable.svg" alt="" class="img_circle">
-            </div>
+            </div> -->
             <div id="card3" class="card card3">
+              <div class="icon-container"><i class="icon icon3"></i></div>
               <p class="title-card">Fully Customizable</p>
               <p class="text-card">Improve brand awareness and content discoverability through customizable links,
                 supercharging audience
@@ -151,12 +163,16 @@
   </script>
 
   <script type="text/javascript">
+    //obteniendo el valor que se puso en el campo text del formulario
+
+
     function validar() {
-      //obteniendo el valor que se puso en el campo text del formulario
+
       Texto = document.getElementById("text").value;
       var container = document.getElementById("shortener");
       var intro = document.getElementById('text');
       var p = document.getElementById('message');
+      var adv = document.getElementById('AdvanceS');
       //la condición
       if (Texto.length == 0 || /^\s+$/.test(Texto)) {
         var intro = document.getElementById('text');
@@ -170,14 +186,57 @@
       container.classList.remove('divActive');
       p.classList.add('alertMessage')
       p.classList.remove('alertMessageActive');
+      adv.classList.add('advanceS')
+      document.getElementById("hola").innerHTML =
+        "<div id='card-link' class='card-link'>" +
+        "<p class='title-card-link'>https://www.frontendmentor.io</p>" +
+        "<p class='text-card-link'>https://rel.ink/k41Kyk</p>" +
+        "<button type='button' class='btn btn-card-link'>Copy</button>" +
+        "</div>";
+      return true;
+    }
+
+    function validar1() {
+      Texto = document.getElementById("text").value;
+      var container = document.getElementById("shortener");
+      var intro = document.getElementById('text');
+      var p = document.getElementById('message');
+      var adv = document.getElementById('AdvanceS');
+      //la condición
+      if (Texto.length == 0 || /^\s+$/.test(Texto)) {
+        intro.classList.remove('inputActive');
+        container.classList.remove('divActive');
+        p.classList.add('alertMessage')
+        p.classList.remove('alertMessageActive');
+        return false;
+      }
+
+      return true;
+    }
+
+    document.getElementById("text").onkeypress = function () {
+      myFunction()
+    };
+
+    function myFunction() {
+      Texto = document.getElementById("text").value;
+      var container = document.getElementById("shortener");
+      var intro = document.getElementById('text');
+      var p = document.getElementById('message');
+      var adv = document.getElementById('AdvanceS');
+
+      if (Texto.length == 0 || /^\s+$/.test(Texto)) {
+        intro.classList.remove('inputActive');
+        container.classList.remove('divActive');
+        p.classList.add('alertMessage')
+        p.classList.remove('alertMessageActive');
+        return false;
+      }
+
       return true;
     }
   </script>
 
-
-
 </body>
-
-
 
 </html>
