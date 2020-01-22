@@ -82,7 +82,7 @@ a {
 
 #section-a img {
   padding-left: 24px;
-  width: 495px;
+  /* width: 495px; */
 }
 
 #section-a .title {
@@ -145,7 +145,7 @@ a {
   display: flex;
   flex-direction: column;
   height: 158px;
-  margin-top: 91px;
+  margin-top: 89px;
   width: 325px;
   z-index: -1;
 }
@@ -160,6 +160,10 @@ button {
   border: none;
   height: 46px;
   margin-left: 24px;
+}
+
+#section-b input::placeholder {
+  color: hsl(257, 7%, 63%);
 }
 
 #section-b input {
@@ -178,6 +182,11 @@ button {
   margin-bottom: 37px;
   margin-top: 0px;
   width: 259px;
+}
+
+#section-b .inputActive::placeholder {
+  color: #e27476;
+  opacity: 50%;
 }
 
 .alertMessage {
@@ -206,6 +215,11 @@ button {
   width: 278px;
 }
 
+.btn-copyOnClick {
+  background-color: #383055;
+  content: "Copied!";
+}
+
 /* Section C */
 
 #section-c {
@@ -224,7 +238,7 @@ button {
   font-size: 27px;
   font-weight: 900;
   margin-bottom: 0px;
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 #section-c .text2 {
@@ -232,7 +246,7 @@ button {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.9;
-  margin-bottom: 0px;
+  margin-bottom: 42px;
   padding-bottom: 2em;
   padding: 0px 16px;
 }
@@ -496,7 +510,10 @@ button {
 
 .icon2 {
   background-image: url('images/icon-detailed-records.svg');
-  bottom: 238px;
+}
+
+.icon2-bottom {
+  bottom: 238px !important;
 }
 
 .icon3 {
@@ -517,4 +534,80 @@ button {
   transform: translate(-50%);
   width: 88px;
   bottom: 220px;
+}
+
+.web {
+  display: none;
+}
+
+
+
+
+/* Web Design */
+
+@media (min-width: 768px) {
+
+  .web {
+    display: flex;
+  }
+
+  .active {
+    display: none;
+  }
+
+  #menu {
+    display: none;
+  }
+
+
+  #section-a {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: 120px;
+    margin-bottom: 247px;
+  }
+
+  .img_web {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #section-c ul {
+    display: flex;
+  }
+
+  #section-c li {
+    display: flex;
+    width: 100%;
+  }
+
+  #section-c .card {
+    left: 12%;
+    transform: translate(0%);
+    margin-right: 26px;
+  }
+
+  #section-d {
+    background-image: url(images/bg-boost-desktop.svg);
+    height: 254px;
+
+  }
+
+  .section-f {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+  }
+
+  .bold {
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+    color: #9A999E;
+    padding-top: 2em;
+    padding-left: 3em;
+  }
+
 }

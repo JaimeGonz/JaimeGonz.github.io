@@ -19,6 +19,16 @@
   <section class="main-container">
     <header id="showcase" class="topnav">
       <li><img src="images/logo.svg" alt="Logo Shortly" class="active"></li>
+
+      <ul class="web">
+        <li class="img_logo"><img src="images/logo.svg" alt="Logo Shortly" class="logo"></li>
+        <li><a href="features.html" class="bold">Features</a></li>
+        <li><a href="pricing.html" class="bold">Pricing</a></li>
+        <li><a href="resources.html" class="bold">Resources</a></li>
+        <li><a href="login.html" class="bold separation">Login</a></li>
+        <li><a href="signUp.html" class="bold btnSu">Sign Up</a></li>
+      </ul>
+
       <li id="menu"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars fa-2x"></i>
         </a>></li>
@@ -34,7 +44,7 @@
 
     <main id="main">
       <section id="section-a">
-        <div class="">
+        <div class="img_web">
           <img src="images/illustration-working.svg" alt="">
         </div>
         <div>
@@ -56,18 +66,10 @@
       </section>
 
       <section id="section-c">
-        <div id="hola"></div>
-
-        <!-- <div id="card-link" class="card-link">
-          <p class="title-card-link">https://www.frontendmentor.io</p>
-          <p class="text-card-link">https://rel.ink/k41Kyk</p>
-          <button type="button" class="btn btn-card-link">Copy</button>
-        </div> -->
-
+        <div id="Cards-link"></div>
         <div id="AdvanceS">
           <p class="title2">Advanced Statistics</p>
           <p class="text2">Track how your links are performing across the web with our
-            advanced statistics dashboard.</p>
         </div>
         <ul>
           <li>
@@ -85,7 +87,7 @@
               <img src="images/icon-detailed-records.svg" alt="" class="img_circle">
             </div> -->
             <div id="card2" class="card card2">
-              <div class="icon-container"><i class="icon icon2"></i></div>
+              <div class="icon2-bottom icon-container"><i class="icon icon2"></i></div>
               <p class="title-card">Detailed Records</p>
               <p class="text-card">Gain insights into who is clicking your links. Knowing when and where
                 people engage with your content helps inform better decisions.</p>
@@ -116,7 +118,7 @@
       </section>
 
       <section id="section-f">
-        <div>
+        <div class="section-f">
           <img src="images/logo.svg" alt="Logo Shortly" class="img_logo">
           <div class="card">
             <p>Features</p>
@@ -151,7 +153,7 @@
     </main>
   </section>
 
-  <script>
+  <script type="text/javascript">
     function myFunction() {
       var x = document.getElementById("myLinks");
       if (x.style.display === "flex") {
@@ -160,9 +162,6 @@
         x.style.display = "flex";
       }
     }
-  </script>
-
-  <script type="text/javascript">
     //obteniendo el valor que se puso en el campo text del formulario
 
 
@@ -180,18 +179,20 @@
         container.classList.add('divActive');
         p.classList.remove('alertMessage');
         p.classList.add('alertMessageActive');
+        intro.focus();
         return false;
       }
       intro.classList.remove('inputActive');
       container.classList.remove('divActive');
       p.classList.add('alertMessage')
       p.classList.remove('alertMessageActive');
-      adv.classList.add('advanceS')
-      document.getElementById("hola").innerHTML =
-        "<div id='card-link' class='card-link'>" +
+      adv.classList.add('advanceS');
+      document.getElementById("Cards-link").innerHTML =
+        "<div class='card-link'>" +
         "<p class='title-card-link'>https://www.frontendmentor.io</p>" +
         "<p class='text-card-link'>https://rel.ink/k41Kyk</p>" +
-        "<button type='button' class='btn btn-card-link'>Copy</button>" +
+        "<button id='Copy' type='button' class='btn btn-card-link'" +
+        " onclick='return copy()'>Copy</button>" +
         "</div>";
       return true;
     }
@@ -214,11 +215,12 @@
       return true;
     }
 
+    // Give the style to the input field after press
     document.getElementById("text").onkeypress = function () {
-      myFunction()
+      shortener()
     };
 
-    function myFunction() {
+    function shortener() {
       Texto = document.getElementById("text").value;
       var container = document.getElementById("shortener");
       var intro = document.getElementById('text');
@@ -234,6 +236,13 @@
       }
 
       return true;
+    }
+
+    // Give the Style to de Copy button after press
+    function copy() {
+      var btn = document.getElementById('Copy');
+      btn.classList.add('btn-copyOnClick');
+      document.getElementById("Copy").innerHTML = "Copied!";
     }
   </script>
 
