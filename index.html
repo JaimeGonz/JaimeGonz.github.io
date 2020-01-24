@@ -17,8 +17,6 @@
 <body class="scroll">
 
   <section class="main-container">
-
-    <!-- <header id="showcase" class="topnav"> -->
     <header class="topnav">
       <ul class="web">
         <li class="img_logo"><img src="images/logo.svg" alt="Logo Shortly" class="logo"></li>
@@ -50,6 +48,12 @@
         <div class="img_web">
           <img src="images/illustration-working.svg" alt="">
         </div>
+        <!-- <div class="box">
+          <p class="title">More than just shorter links</p>
+          <p class="text">Build your brand’s recognition and get detailed insights
+            on how your links are performing.</p>
+          <button type="button" class="btn"> Get Started</button>
+        </div> -->
         <div>
           <p class="title">More than just shorter links</p>
           <p class="text">Build your brand’s recognition and get detailed insights
@@ -62,7 +66,6 @@
         <div id="shortener">
           <input type="text" id="text" placeholder="Shorten a link here..." onfocus="return validar()"
             onblur="return validar1()">
-          <!-- onfocus="return validar()" -->
           <p id="message" class="alertMessage">Please add a link</p>
           <button type="button" class="btn" onclick="return validar()">Shorten It!</button>
         </div>
@@ -81,9 +84,6 @@
         </div>
         <ul>
           <li>
-            <!-- <div class="circle">
-              <img src="images/icon-brand-recognition.svg" alt="" class="img_circle">
-            </div> -->
             <div id="card1" class="card">
               <div class="icon-container"><i class="icon"></i></div>
               <p class="title-card">Brand Recognition</p>
@@ -91,9 +91,6 @@
                 mean a thing. Branded links help instil confidence in your content.</p>
             </div>
             <div class="line"></div>
-            <!-- <div class="circle">
-              <img src="images/icon-detailed-records.svg" alt="" class="img_circle">
-            </div> -->
             <div id="card2" class="card card2">
               <div class="icon2-bottom icon-container"><i class="icon icon2"></i></div>
               <p class="title-card">Detailed Records</p>
@@ -102,9 +99,6 @@
             </div>
 
             <div class="line"></div>
-            <!-- <div class="circle">
-              <img src="images/icon-fully-customizable.svg" alt="" class="img_circle">
-            </div> -->
             <div id="card3" class="card card3">
               <div class="icon-container"><i class="icon icon3"></i></div>
               <p class="title-card">Fully Customizable</p>
@@ -173,9 +167,9 @@
         x.style.display = "flex";
       }
     }
+
+
     //obteniendo el valor que se puso en el campo text del formulario
-
-
     function validar() {
 
       Texto = document.getElementById("text").value;

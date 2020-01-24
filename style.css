@@ -181,6 +181,7 @@ button {
   height: 40px;
   margin-bottom: 37px;
   margin-top: 0px;
+  outline-style: none;
   width: 259px;
 }
 
@@ -205,6 +206,7 @@ button {
 }
 
 #section-b button {
+  outline-style: none;
   font-size: 18px;
   font-weight: 500;
   height: 48px;
@@ -586,8 +588,8 @@ button {
 
   .topnav--btn {
     color: white;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 900;
     height: 55px;
     width: 197px;
     margin-left: 0px;
@@ -608,14 +610,14 @@ button {
 
   #section-a .title {
     font-size: 72px;
-    display: flex;
-    justify-content: end;
+    /* display: flex;
+    justify-content: end; */
   }
 
   #section-a .text {
-    font-size: 30px;
-    display: flex;
-    padding: 0px;
+    font-size: 25px;
+    /* display: flex;
+    padding: 0px; */
   }
 
   .img_web {
@@ -623,6 +625,60 @@ button {
     display: flex;
     justify-content: center;
   }
+
+  #section-b {
+    width: 77%;
+  }
+
+  #section-b div {
+    background-image: url(images/bg-shorten-desktop.svg);
+    flex-direction: row;
+    width: 100%;
+    height: 162px;
+    align-items: center;
+  }
+
+  #section-b .divActive {
+    padding-top: 0px;
+  }
+
+  #section-b button {
+    outline-style: none;
+    margin: 0px 63px 0 24px;
+    height: 60px;
+    border-radius: 10px;
+  }
+
+  #section-b input {
+    border-radius: 10px;
+    font-size: 20px;
+    width: 100%;
+    height: 60px;
+    margin: 0 0 0 63px;
+    padding-left: 33px;
+  }
+
+  #section-b .inputActive {
+    border-radius: 10px;
+    border: 3px solid #e27476;
+    width: 100%;
+    height: 60px;
+    margin: 0 0 0 63px;
+  }
+
+  .alertMessageActive {
+    color: #e27476;
+    /* display: block; */
+    font-size: 15px;
+    font-weight: 500;
+    font-style: italic;
+    left: 60px;
+    top: 210px;
+    /* margin: 0;
+    position: absolute;
+    top: 165px; */
+  }
+
 
   #section-c ul {
     display: flex;
