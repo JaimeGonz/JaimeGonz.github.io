@@ -17,24 +17,27 @@
 <body class="scroll">
 
   <section class="main-container">
-    <header id="showcase" class="topnav">
-      <li><img src="images/logo.svg" alt="Logo Shortly" class="active"></li>
 
+    <!-- <header id="showcase" class="topnav"> -->
+    <header class="topnav">
       <ul class="web">
         <li class="img_logo"><img src="images/logo.svg" alt="Logo Shortly" class="logo"></li>
-        <li><a href="features.html" class="bold">Features</a></li>
-        <li><a href="pricing.html" class="bold">Pricing</a></li>
-        <li><a href="resources.html" class="bold">Resources</a></li>
-        <li><a href="login.html" class="bold separation">Login</a></li>
-        <li><a href="signUp.html" class="bold btnSu">Sign Up</a></li>
+        <li><a href="#features.html" class="topnav--bold">Features </a> </li>
+        <li><a href="#pricing.html" class="topnav--bold">Pricing</a></li>
+        <li><a href="#resources.html" class="topnav--bold">Resources</a></li>
+        <li class="login"><a href="#login.html" class="topnav--bold">Login</a></li>
+        <button type="button" class="btn btnSa btnSup"><a href="#signUp.html" class="btn topnav--bold topnav--btn">Sign
+            Up</a></button>
       </ul>
+      <li><img src="images/logo.svg" alt="Logo Shortly" class="active"></li>
 
       <li id="menu"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars fa-2x"></i>
         </a>></li>
+
     </header>
 
-    <div id="myLinks" class="menu card2">
+    <div id="myLinks" class="links menu card2">
       <a href="#features" class="option">Features</a>
       <a href="#pricing" class="option option2">Pricing</a>
       <a href="#resources" class="option option2">Resources</a>
@@ -66,7 +69,12 @@
       </section>
 
       <section id="section-c">
+
+
         <div id="Cards-link"></div>
+
+
+
         <div id="AdvanceS">
           <p class="title2">Advanced Statistics</p>
           <p class="text2">Track how your links are performing across the web with our
@@ -151,9 +159,12 @@
         </div>
       </section>
     </main>
+
   </section>
 
   <script type="text/javascript">
+    var i = 0;
+
     function myFunction() {
       var x = document.getElementById("myLinks");
       if (x.style.display === "flex") {
@@ -187,13 +198,25 @@
       p.classList.add('alertMessage')
       p.classList.remove('alertMessageActive');
       adv.classList.add('advanceS');
-      document.getElementById("Cards-link").innerHTML =
-        "<div class='card-link'>" +
+      // document.getElementById("Cards-link").innerHTML =
+      //   "<div id='card_link" + i + "' class='card-link'>" +
+      //   "<p class='title-card-link'>https://www.frontendmentor.io</p>" +
+      //   "<p class='text-card-link'>https://rel.ink/k41Kyk</p>" +
+      //   "<button id='Copy' type='button' class='btn btn-card-link'" +
+      //   " onclick='return copy()'>Copy</button>" +
+      //   "</div>";
+
+      var lista = document.getElementById("Cards-link");
+      lista.insertAdjacentHTML("beforeend", "<div id='card_link" + i + "' class='card-link'>" +
         "<p class='title-card-link'>https://www.frontendmentor.io</p>" +
         "<p class='text-card-link'>https://rel.ink/k41Kyk</p>" +
         "<button id='Copy' type='button' class='btn btn-card-link'" +
         " onclick='return copy()'>Copy</button>" +
-        "</div>";
+        "</div>");
+
+
+      ;
+      i++;
       return true;
     }
 
