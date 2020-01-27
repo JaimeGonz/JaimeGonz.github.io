@@ -548,8 +548,13 @@ button {
 
 /* Web Design */
 
+
+
+@media (min-width: 768px) {}
+
+
 /* @media (min-width: 768px) { */
-@media (min-width: 990px) {
+@media (min-width: 768px) {
 
   .web {
     display: flex;
@@ -557,7 +562,7 @@ button {
     padding: 0px;
     width: -webkit-fill-available;
     width: -webkit-fill-available;
-    padding: 0 165px;
+    padding: 0 11.5%;
   }
 
   .active {
@@ -608,7 +613,8 @@ button {
     flex-direction: row-reverse;
     margin-bottom: 148px;
     margin-left: 0px;
-    padding-left: 163px;
+    /* padding-left: 163px; */
+    padding-left: 11.5%;
     padding-top: 75px;
     text-align: left;
   }
@@ -726,8 +732,24 @@ button {
 
   /* Section c */
 
+  #section-c {
+    padding-top: 163px;
+
+  }
+
+  #section-c .title2 {
+    font-size: 37px;
+  }
+
+  #section-c .text2 {
+    font-size: 16px;
+    padding: 0px 31%;
+  }
+
   #section-c ul {
     display: flex;
+    flex-wrap: wrap;
+    padding: 87px 160px 0px 160px;
   }
 
   #section-c li {
@@ -739,9 +761,56 @@ button {
 
   #section-c .card {
     left: 0%;
-    transform: translate(10px, 10px);
+    transform: translate(0px, 0px);
     margin-right: 26px;
+    height: 243px;
+    text-align: left;
+    margin: 0px;
+    width: 320px;
   }
+
+  #section-c .card1 {
+    transform: translate(-30px, -30px);
+  }
+
+  #section-c .card3 {
+    transform: translate(30px, 30px);
+    margin: 0 0 60px;
+  }
+
+  .title-card {
+    padding-top: 48px;
+    padding-left: 30px;
+  }
+
+  .text-card {
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  .icon-container {
+    margin-left: 30px;
+    left: 0%;
+    transform: translate(0px, 20px);
+  }
+
+  .icon2-bottom {
+    bottom: 220px !important;
+  }
+
+  .line1 {
+    height: 8px;
+    width: 30px;
+    transform: translate(-190px, 190px);
+  }
+
+  .line2 {
+    height: 8px;
+    width: 30px;
+    transform: translate(160px, 190px);
+  }
+
+
 
   #section-d {
     background-image: url(images/bg-boost-desktop.svg);
