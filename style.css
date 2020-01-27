@@ -733,23 +733,25 @@ button {
   /* Section c */
 
   #section-c {
-    padding-top: 163px;
+    padding-top: 171px;
+    padding-bottom: 110px;
 
   }
 
   #section-c .title2 {
-    font-size: 37px;
+    font-size: 40px;
   }
 
   #section-c .text2 {
-    font-size: 16px;
-    padding: 0px 31%;
+    font-size: 18px;
+    padding: 0px 32%;
+    margin-top: 10px;
   }
 
   #section-c ul {
     display: flex;
     flex-wrap: wrap;
-    padding: 87px 160px 0px 160px;
+    padding: 95px 160px 0px 160px;
   }
 
   #section-c li {
@@ -763,35 +765,37 @@ button {
     left: 0%;
     transform: translate(0px, 0px);
     margin-right: 26px;
-    height: 243px;
+    height: 267px;
     text-align: left;
     margin: 0px;
-    width: 320px;
+    width: 350px;
   }
 
   #section-c .card1 {
-    transform: translate(-30px, -30px);
+    transform: translate(-30px, -43px);
   }
 
   #section-c .card3 {
-    transform: translate(30px, 30px);
+    transform: translate(30px, 44px);
     margin: 0 0 60px;
   }
 
   .title-card {
-    padding-top: 48px;
+    padding-top: 52px;
     padding-left: 30px;
+    font-size: 22px;
   }
 
   .text-card {
-    line-height: 1.5;
-    font-size: 14px;
+    line-height: 1.7;
+    font-size: 15px;
+    padding: 0px 31px;
   }
 
   .icon-container {
     margin-left: 30px;
     left: 0%;
-    transform: translate(0px, 20px);
+    transform: translate(0px, -5px);
   }
 
   .icon2-bottom {
@@ -801,13 +805,13 @@ button {
   .line1 {
     height: 8px;
     width: 30px;
-    transform: translate(-190px, 190px);
+    transform: translate(-205px, 190px);
   }
 
   .line2 {
     height: 8px;
     width: 30px;
-    transform: translate(160px, 190px);
+    transform: translate(175px, 190px);
   }
 
 
