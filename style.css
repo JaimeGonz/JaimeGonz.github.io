@@ -818,8 +818,16 @@ button {
 
   #section-d {
     background-image: url(images/bg-boost-desktop.svg);
-    height: 254px;
+    height: 252px;
+  }
 
+  #section-d .title {
+    font-size: 38px;
+    padding: 20px;
+  }
+
+  .btnSection-d {
+    margin: 5px;
   }
 
   .section-f {
