@@ -832,10 +832,42 @@ button {
 
   .section-f {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     width: 100%;
+    height: 312px;
 
   }
+
+  #section-f .card {
+    text-align: left;
+    margin: 36px 35px;
+  }
+
+  #section-f .card2 {
+    text-align: left;
+    margin: 36px 50px;
+  }
+
+  #section-f .card-margin {
+    margin-left: 42px;
+    margin-right: 58px;
+  }
+
+  #section-f .img_logo {
+    height: 32px;
+    width: auto;
+    margin-right: 228px;
+  }
+
+  #section-f .icons {
+    margin-left: 42px;
+    margin-right: 150px;
+    width: 190px;
+    margin-top: 60px;
+
+  }
+
+
 
 
 
