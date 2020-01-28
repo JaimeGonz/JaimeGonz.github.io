@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
     type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
 </head>
 
@@ -35,7 +38,7 @@
 
     </header>
 
-    <div id="myLinks" class="links menu card2">
+    <div id="myLinks" class="links menu card-middle">
       <a href="#features" class="option">Features</a>
       <a href="#pricing" class="option option2">Pricing</a>
       <a href="#resources" class="option option2">Resources</a>
@@ -85,7 +88,7 @@
                 mean a thing. Branded links help instil confidence in your content.</p>
             </div>
             <div class="line line1"></div>
-            <div id="card2" class="card card2">
+            <div id="card2" class="card card-middle">
               <div class="icon2-bottom icon-container"><i class="icon icon2"></i></div>
               <p class="title-card">Detailed Records</p>
               <p class="text-card">Gain insights into who is clicking your links. Knowing when and where
@@ -123,14 +126,14 @@
             <li>Analytics</li>
           </div>
 
-          <div class="card2 card-margin">
+          <div class="card-middle card-margin">
             <p>Resources</p>
             <li>Blog</li>
             <li>Developers</li>
             <li>Support</li>
           </div>
 
-          <div class="card2">
+          <div class="card-middle">
             <p>Company</p>
             <li>About</li>
             <li>Our Team</li>
@@ -194,16 +197,8 @@
       //   " onclick='return copy()'>Copy</button>" +
       //   "</div>";
 
-      var lista = document.getElementById("Cards-link");
-      lista.insertAdjacentHTML("beforeend", "<div id='card_link" + i + "' class='card-link'>" +
-        "<p class='title-card-link'>https://www.frontendmentor.io</p>" +
-        "<p class='text-card-link'>https://rel.ink/k41Kyk</p>" +
-        "<button id='Copy' type='button' class='btn btn-card-link'" +
-        " onclick='return copy()'>Copy</button>" +
-        "</div>");
+      createLink();
 
-
-      ;
       i++;
       return true;
     }
@@ -254,6 +249,30 @@
       var btn = document.getElementById('Copy');
       btn.classList.add('btn-copyOnClick');
       document.getElementById("Copy").innerHTML = "Copied!";
+    }
+
+
+    function createLink() {
+      const url = document.getElementById("text").value;
+      const requestData = {
+        url
+      }
+      var lista = document.getElementById("Cards-link");
+      axios.post('https://rel.ink/api/links/', requestData)
+        .then(function (response) {
+          console.log(`Here is your shorted link: https://rel.ink/${response.data.hashid}`)
+          document.getElementById("text").value = '';
+
+          lista.insertAdjacentHTML("beforeend", "<div id='card_link" + i + "' class='card-link'>" +
+            "<p class='title-card-link'>" + url + "</p>" +
+            "<p class='text-card-link'>" + `https://rel.ink/${response.data.hashid}` + "</p>" +
+            "<button id='Copy' type='button' class='btn btn-card-link'" +
+            " onclick='return copy()'>Copy</button>" +
+            "</div>");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
   </script>
 
