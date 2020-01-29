@@ -66,8 +66,8 @@
           <p id="message" class="alertMessage">Please add a link</p>
           <button type="button" class="btn" onclick="return validar()">Shorten It!</button>
         </div>
-      </section>
 
+      </section>
       <section id="section-c">
 
 
@@ -245,10 +245,18 @@
     }
 
     // Give the Style to de Copy button after press
-    function copy() {
-      var btn = document.getElementById('Copy');
+    var i = 0;
+
+    function copy(clicked) {
+      var btn = document.getElementById(clicked);
       btn.classList.add('btn-copyOnClick');
-      document.getElementById("Copy").innerHTML = "Copied!";
+      btn.innerHTML = "Copied!";
+      console.log(clicked);
+      var card = btn.previousSibling.id;
+      var copyText = document.getElementById(card);
+      console.log(copyText);
+      copyText.select();
+      document.execCommand("copy");
     }
 
 
@@ -265,14 +273,30 @@
 
           lista.insertAdjacentHTML("beforeend", "<div id='card_link" + i + "' class='card-link'>" +
             "<p class='title-card-link'>" + url + "</p>" +
-            "<p class='text-card-link'>" + `https://rel.ink/${response.data.hashid}` + "</p>" +
-            "<button id='Copy' type='button' class='btn btn-card-link'" +
-            " onclick='return copy()'>Copy</button>" +
+            "<input type='text' id='link" + i + "' class='text-card-link'" +
+            `value= 'https://rel.ink/${response.data.hashid}'` +
+            ">" +
+            "<button id='Copy" + i + "' type='button' class='btn btn-card-link'" +
+            " onclick='return copy(this.id)'>Copy</button>" +
             "</div>");
         })
         .catch(function (error) {
           console.log(error);
         });
+    }
+
+    function getID() {
+      // $(this).attr("id")
+      // var div = document.getElementById('Copy').parentNode.id;
+      // console.log(div);
+      var card = document.getElementById('Copy').previousSibling.id;
+      // El contenido HTML del elemento con id "contenido"
+      console.log(document.getElementById(card).innerHTML);
+      // var copyText = document.getElementById(card.value);
+      // copyText.select();
+      // copyText.setSelectionRange(0, 99999)
+      // document.execCommand("copy");
+      // alert("Copied the text: " + copyText.value);
     }
   </script>
 
