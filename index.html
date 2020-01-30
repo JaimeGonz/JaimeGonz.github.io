@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
 </head>
 
@@ -115,46 +114,50 @@
           <button type="button" class="btn btnSection-d">Get Started</button>
         </div>
       </section>
+      <div>
 
-      <section id="section-f">
-        <div class="section-f">
-          <img src="images/logo.svg" alt="Logo Shortly" class="img_logo">
-          <div class="card">
-            <p>Features</p>
-            <li>Link Shortening</li>
-            <li>Branded Links</li>
-            <li>Analytics</li>
-          </div>
+        <section id="section-f">
+          <div class="section-f">
+            <img src="images/logo.svg" alt="Logo Shortly" class="img_logo">
+            <div class="card">
+              <p>Features</p>
+              <li>Link Shortening</li>
+              <li>Branded Links</li>
+              <li>Analytics</li>
+            </div>
 
-          <div class="card-middle card-margin">
-            <p>Resources</p>
-            <li>Blog</li>
-            <li>Developers</li>
-            <li>Support</li>
-          </div>
+            <div class="card-middle card-margin">
+              <p>Resources</p>
+              <li>Blog</li>
+              <li>Developers</li>
+              <li>Support</li>
+            </div>
 
-          <div class="card-middle">
-            <p>Company</p>
-            <li>About</li>
-            <li>Our Team</li>
-            <li>Careers</li>
-            <li>Contact</li>
-          </div>
+            <div class="card-middle">
+              <p>Company</p>
+              <li>About</li>
+              <li>Our Team</li>
+              <li>Careers</li>
+              <li>Contact</li>
+            </div>
 
-          <div class="card icons">
-            <li class="redes"><img src="images/icon-facebook.svg"></li>
-            <li class="redes"><img src="images/icon-twitter.svg"></li>
-            <li class="redes"><img src="images/icon-pinterest.svg"></li>
-            <li class="redes"><img src="images/icon-instagram.svg"></li>
+            <div class="card icons">
+              <li class="redes"><img src="images/icon-facebook.svg"></li>
+              <li class="redes"><img src="images/icon-twitter.svg"></li>
+              <li class="redes"><img src="images/icon-pinterest.svg"></li>
+              <li class="redes"><img src="images/icon-instagram.svg"></li>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
     </main>
-
   </div>
 
-  <script type="text/javascript">
+
+  <script>
     var i = 0;
+    var itemsArray = new Array();
+    var cards = document.getElementById("Cards-link");
+
 
     function myFunction() {
       var x = document.getElementById("myLinks");
@@ -164,7 +167,6 @@
         x.style.display = "flex";
       }
     }
-
 
     //obteniendo el valor que se puso en el campo text del formulario
     function validar() {
@@ -189,18 +191,46 @@
       p.classList.add('alertMessage')
       p.classList.remove('alertMessageActive');
       adv.classList.add('advanceS');
-      // document.getElementById("Cards-link").innerHTML =
-      //   "<div id='card_link" + i + "' class='card-link'>" +
-      //   "<p class='title-card-link'>https://www.frontendmentor.io</p>" +
-      //   "<p class='text-card-link'>https://rel.ink/k41Kyk</p>" +
-      //   "<button id='Copy' type='button' class='btn btn-card-link'" +
-      //   " onclick='return copy()'>Copy</button>" +
-      //   "</div>";
 
       createLink();
-
+      /*Captura de datos escrito en los inputs*/
+      saveStates();
+      /*Limpiando los campos o inputs*/
       i++;
+
       return true;
+    }
+
+
+    window.addEventListener("load", function (event) {
+      if (cards.innerHTML == "") {
+        var data = sessionStorage.getItem("html");
+        console.log("Entra al get: " + data);
+        cards.insertAdjacentHTML("beforeend", data);
+      }
+    });
+
+
+    function saveStates() {
+      console.log("Guarda estado actual")
+      sessionStorage.setItem("html", cards.innerHTML);
+      // var prueba = sessionStorage.getItem("html");
+
+
+      /*
+            window.addEventListener("onload", function (e) {
+              if (cards.innerHTML = "") {
+                document.getElementById("Cards-link").insertAdjacentHTML("beforeend", data);
+              }
+              // to do something (Remember, redirects or alerts are blocked here by most browsers):
+              var data = sessionStorage.getItem("html");
+              document.getElementById("Cards-link").insertAdjacentHTML("beforeend", data);
+              // to show a dialog (uncomment to test):
+              debugger;
+              return showADialog(e);
+            });*/
+
+
     }
 
     function validar1() {
@@ -223,7 +253,7 @@
 
     // Give the style to the input field after press
     document.getElementById("text").onkeypress = function () {
-      shortener()
+      shortener();
     };
 
     function shortener() {
@@ -244,35 +274,44 @@
       return true;
     }
 
-    // Give the Style to de Copy button after press
     var i = 0;
+    var ALL_CARD;
+    var contenido = "";
+    var a = "";
 
     function copy(clicked) {
       var btn = document.getElementById(clicked);
+      // Button styles
       btn.classList.add('btn-copyOnClick');
       btn.innerHTML = "Copied!";
-      console.log(clicked);
-      var card = btn.previousSibling.id;
-      var copyText = document.getElementById(card);
-      console.log(copyText);
+
+      // CopyFunction
+      var card_shortener = btn.previousSibling.id;
+
+      var copyText = document.getElementById(card_shortener);
       copyText.select();
       document.execCommand("copy");
+
+      // var shortener = btn.previousSibling;
+      // var card_shortener = shortener.id;
     }
 
+
+    var lista;
 
     function createLink() {
       const url = document.getElementById("text").value;
       const requestData = {
         url
       }
-      var lista = document.getElementById("Cards-link");
+      lista = document.getElementById("Cards-link");
       axios.post('https://rel.ink/api/links/', requestData)
         .then(function (response) {
-          console.log(`Here is your shorted link: https://rel.ink/${response.data.hashid}`)
+          // console.log(`Here is your shorted link: https://rel.ink/${response.data.hashid}`);
           document.getElementById("text").value = '';
 
           lista.insertAdjacentHTML("beforeend", "<div id='card_link" + i + "' class='card-link'>" +
-            "<p class='title-card-link'>" + url + "</p>" +
+            "<p id='URL" + i + "' class='title-card-link'>" + url + "</p>" +
             "<input type='text' id='link" + i + "' class='text-card-link'" +
             `value= 'https://rel.ink/${response.data.hashid}'` +
             ">" +
@@ -285,20 +324,44 @@
         });
     }
 
-    function getID() {
-      // $(this).attr("id")
-      // var div = document.getElementById('Copy').parentNode.id;
-      // console.log(div);
-      var card = document.getElementById('Copy').previousSibling.id;
-      // El contenido HTML del elemento con id "contenido"
-      console.log(document.getElementById(card).innerHTML);
-      // var copyText = document.getElementById(card.value);
-      // copyText.select();
-      // copyText.setSelectionRange(0, 99999)
-      // document.execCommand("copy");
-      // alert("Copied the text: " + copyText.value);
+    function refresh() {
+
+      if (true) {
+
+        console.log("TRUE");
+        debugger;
+        console.log("Hola amigo bonito");
+
+        // var tarjeta = new Object();
+        ALL_CARD = (document.getElementById(btn.parentNode.id)).outerHTML;
+        var card_link = btn.previousSibling.previousSibling;
+        // tarjeta.link = card_link.outerHTML;
+        // tarjeta.shortener = copyText.outerHTML;
+        // tarjeta.button = btn.outerHTML;
+        // console.log(hola);
+        // itemsArray.push(ALL_CARD);
+
+        contenido = contenido + ALL_CARD;
+        var a = contenido;
+        sessionStorage.setItem('Links', a);
+        itemsArray = sessionStorage.getItem('Links');
+        // itemsArray = sessionStorage.getItem('Links') ? JSON.parse(sessionStorage.getItem('Links')) : []
+
+        sessionStorage.setItem('Links', a);
+        const data = JSON.stringify(sessionStorage.getItem('Links'));
+        var a = document.getElementById('Cards-link');
+        console.log(a);
+        a.insertAdjacentHTML("beforeend", data);
+
+        // data.forEach(item => {
+        //   console.log("Hola");
+        //   liMaker(item);
+        // });
+      }
+
     }
   </script>
+
 
 </body>
 
