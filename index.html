@@ -274,26 +274,24 @@
           console.log(`Here is your shorted link: https://rel.ink/${response.data.hashid}`);
           document.getElementById("text").value = '';
 
-          lista.insertAdjacentHTML("beforeend", "<div id='card_link" + i + "' class='card-link'>" +
-            "<p id='URL" + i + "' class='title-card-link'>" + url + "</p>" +
+          lista.insertAdjacentHTML("beforeend", "<div id='card_link-" + Math.floor(Math.random() * 999999) +
+            "' class='card-link'>" +
+            "<p id='URL-" + Math.floor(Math.random() * 999999) + "' class='title-card-link'>" + url + "</p>" +
             "<input type='text' id='link-" + Math.floor(Math.random() * 999999) + "' class='text-card-link'" +
             `value= 'https://rel.ink/${response.data.hashid}'` +
             ">" +
-            "<button id='Copy" + i + "' type='button' class='btn btn-card-link'" +
+            "<button id='Copy-" + Math.floor(Math.random() * 999999) + "' type='button' class='btn btn-card-link'" +
             " onclick='return copy(this.id)'>Copy</button>" +
             "</div>");
           cards = lista;
           if (lista.innerHTML != null) {
-            console.log("Si la lista tiene datos, tons agrega:  " + lista.innerHTML);
+            console.log("Si la lista tiene datos, agrega:  " + lista.innerHTML);
             sessionStorage.setItem("lista", lista.innerHTML);
           }
         })
         .catch(function (error) {
           console.log(error);
         });
-
-      // // saveStates();
-      // console.log(sessionStorage.html);
 
     }
     // Se ejecuta cuando se recarga la página
@@ -308,14 +306,6 @@
         }
       }
     });
-
-    // function saveStates() {
-    //   console.log("Guardando estado actual")
-    //   console.log(cards.innerHTML);
-    //   if (cards.innerHTML != null) {
-    //     sessionStorage.setItem("html", cards.innerHTML);
-    //   }
-    // }
   </script>
 
 
