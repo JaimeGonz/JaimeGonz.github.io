@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
     type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
 </head>
 
@@ -35,7 +37,7 @@
 
     </header>
 
-    <div id="myLinks" class="links menu card2">
+    <div id="myLinks" class="links menu card-middle">
       <a href="#features" class="option">Features</a>
       <a href="#pricing" class="option option2">Pricing</a>
       <a href="#resources" class="option option2">Resources</a>
@@ -63,8 +65,8 @@
           <p id="message" class="alertMessage">Please add a link</p>
           <button type="button" class="btn" onclick="return validar()">Shorten It!</button>
         </div>
-      </section>
 
+      </section>
       <section id="section-c">
 
 
@@ -85,7 +87,7 @@
                 mean a thing. Branded links help instil confidence in your content.</p>
             </div>
             <div class="line line1"></div>
-            <div id="card2" class="card card2">
+            <div id="card2" class="card card-middle">
               <div class="icon2-bottom icon-container"><i class="icon icon2"></i></div>
               <p class="title-card">Detailed Records</p>
               <p class="text-card">Gain insights into who is clicking your links. Knowing when and where
@@ -112,46 +114,50 @@
           <button type="button" class="btn btnSection-d">Get Started</button>
         </div>
       </section>
+      <div>
 
-      <section id="section-f">
-        <div class="section-f">
-          <img src="images/logo.svg" alt="Logo Shortly" class="img_logo">
-          <div class="card">
-            <p>Features</p>
-            <li>Link Shortening</li>
-            <li>Branded Links</li>
-            <li>Analytics</li>
-          </div>
+        <section id="section-f">
+          <div class="section-f">
+            <img src="images/logo.svg" alt="Logo Shortly" class="img_logo">
+            <div class="card">
+              <p>Features</p>
+              <li>Link Shortening</li>
+              <li>Branded Links</li>
+              <li>Analytics</li>
+            </div>
 
-          <div class="card2 card-margin">
-            <p>Resources</p>
-            <li>Blog</li>
-            <li>Developers</li>
-            <li>Support</li>
-          </div>
+            <div class="card-middle card-margin">
+              <p>Resources</p>
+              <li>Blog</li>
+              <li>Developers</li>
+              <li>Support</li>
+            </div>
 
-          <div class="card2">
-            <p>Company</p>
-            <li>About</li>
-            <li>Our Team</li>
-            <li>Careers</li>
-            <li>Contact</li>
-          </div>
+            <div class="card-middle">
+              <p>Company</p>
+              <li>About</li>
+              <li>Our Team</li>
+              <li>Careers</li>
+              <li>Contact</li>
+            </div>
 
-          <div class="card icons">
-            <li class="redes"><img src="images/icon-facebook.svg"></li>
-            <li class="redes"><img src="images/icon-twitter.svg"></li>
-            <li class="redes"><img src="images/icon-pinterest.svg"></li>
-            <li class="redes"><img src="images/icon-instagram.svg"></li>
+            <div class="card icons">
+              <li class="redes"><img src="images/icon-facebook.svg"></li>
+              <li class="redes"><img src="images/icon-twitter.svg"></li>
+              <li class="redes"><img src="images/icon-pinterest.svg"></li>
+              <li class="redes"><img src="images/icon-instagram.svg"></li>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
     </main>
-
   </div>
 
-  <script type="text/javascript">
+
+  <script>
     var i = 0;
+    var itemsArray = new Array();
+    var cards = document.getElementById("Cards-link");
+
 
     function myFunction() {
       var x = document.getElementById("myLinks");
@@ -161,7 +167,6 @@
         x.style.display = "flex";
       }
     }
-
 
     //obteniendo el valor que se puso en el campo text del formulario
     function validar() {
@@ -186,24 +191,8 @@
       p.classList.add('alertMessage')
       p.classList.remove('alertMessageActive');
       adv.classList.add('advanceS');
-      // document.getElementById("Cards-link").innerHTML =
-      //   "<div id='card_link" + i + "' class='card-link'>" +
-      //   "<p class='title-card-link'>https://www.frontendmentor.io</p>" +
-      //   "<p class='text-card-link'>https://rel.ink/k41Kyk</p>" +
-      //   "<button id='Copy' type='button' class='btn btn-card-link'" +
-      //   " onclick='return copy()'>Copy</button>" +
-      //   "</div>";
 
-      var lista = document.getElementById("Cards-link");
-      lista.insertAdjacentHTML("beforeend", "<div id='card_link" + i + "' class='card-link'>" +
-        "<p class='title-card-link'>https://www.frontendmentor.io</p>" +
-        "<p class='text-card-link'>https://rel.ink/k41Kyk</p>" +
-        "<button id='Copy' type='button' class='btn btn-card-link'" +
-        " onclick='return copy()'>Copy</button>" +
-        "</div>");
-
-
-      ;
+      createLink();
       i++;
       return true;
     }
@@ -228,7 +217,7 @@
 
     // Give the style to the input field after press
     document.getElementById("text").onkeypress = function () {
-      shortener()
+      shortener();
     };
 
     function shortener() {
@@ -249,13 +238,75 @@
       return true;
     }
 
-    // Give the Style to de Copy button after press
-    function copy() {
-      var btn = document.getElementById('Copy');
+    var i = 0;
+    var ALL_CARD;
+    var contenido = "";
+    var a = "";
+    var when_btn_changes = "";
+
+    function copy(clicked) {
+      when_btn_changes = document.getElementById("Cards-link");
+      var btn = document.getElementById(clicked);
+      // Button styles
       btn.classList.add('btn-copyOnClick');
-      document.getElementById("Copy").innerHTML = "Copied!";
+      btn.innerHTML = "Copied!";
+      sessionStorage.setItem("lista", when_btn_changes.innerHTML); //Actualiza el html cuando le dan click al botón.
+
+      // CopyFunction
+      var card_shortener = btn.previousSibling.id;
+      var copyText = document.getElementById(card_shortener);
+      copyText.select();
+      document.execCommand("copy");
     }
+
+
+    var lista;
+
+    function createLink() {
+      const url = document.getElementById("text").value;
+      const requestData = {
+        url
+      }
+      lista = document.getElementById("Cards-link");
+      axios.post('https://rel.ink/api/links/', requestData)
+        .then(function (response) {
+          console.log(`Here is your shorted link: https://rel.ink/${response.data.hashid}`);
+          document.getElementById("text").value = '';
+
+          lista.insertAdjacentHTML("beforeend", "<div id='card_link-" + Math.floor(Math.random() * 999999) +
+            "' class='card-link'>" +
+            "<p id='URL-" + Math.floor(Math.random() * 999999) + "' class='title-card-link'>" + url + "</p>" +
+            "<input type='text' id='link-" + Math.floor(Math.random() * 999999) + "' class='text-card-link'" +
+            `value= 'https://rel.ink/${response.data.hashid}'` +
+            ">" +
+            "<button id='Copy-" + Math.floor(Math.random() * 999999) + "' type='button' class='btn btn-card-link'" +
+            " onclick='return copy(this.id)'>Copy</button>" +
+            "</div>");
+          cards = lista;
+          if (lista.innerHTML != null) {
+            console.log("Si la lista tiene datos, agrega:  " + lista.innerHTML);
+            sessionStorage.setItem("lista", lista.innerHTML);
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+    }
+    // Se ejecuta cuando se recarga la página
+    var data = "";
+    window.addEventListener("load", function (event) {
+      if (cards.innerHTML == "") { //Al iniciar si no tiene nada dentro:
+        // console.log("Entra al primer if");
+        if (sessionStorage.getItem('lista') != null) {
+          // console.log("Entra al if getItem: " + data);
+          data = sessionStorage.getItem("lista");
+          cards.insertAdjacentHTML("beforeend", data);
+        }
+      }
+    });
   </script>
+
 
 </body>
 

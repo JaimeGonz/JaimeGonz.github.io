@@ -275,6 +275,7 @@ button {
   position: relative;
   transform: translate(-50%);
   width: 328px;
+  height: 100%;
 }
 
 .title-card-link {
@@ -285,27 +286,37 @@ button {
   margin-bottom: 8px;
   margin-left: 15px;
   padding-top: 15px;
+  text-align: left;
+  width: 91%;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .text-card-link {
+  border: none;
   border-top: 0.5px solid #f0f0f0;
   color: #2bcdcc;
   display: flex;
   font-size: 16px;
   font-weight: 500;
-  margin-bottom: 15px;
-  padding: 8px 0 0 15px;
+  margin: 0px;
+  outline: none;
+  padding: 15px 0 15px 15px;
+  width: 95.5%;
 }
 
 .btn-card-link {
   font-size: 15px;
   font-weight: 900;
   height: 38px;
-  width: 295px;
+  margin-bottom: 17px;
   margin-left: 0;
+  width: 295px;
 }
 
-#section-c .card2 {
+#section-c .card-middle {
   height: 283px;
 }
 
@@ -420,7 +431,7 @@ button {
   margin-top: 43px;
 }
 
-#section-f .card2 {
+#section-f .card-middle {
   margin-top: 36px;
 }
 
@@ -706,7 +717,7 @@ button {
   .card-link {
     display: flex;
     width: 77%;
-    height: auto;
+    height: 73px;
     align-items: center;
     justify-content: space-between;
   }
@@ -718,10 +729,12 @@ button {
   }
 
   .title-card-link {
+    text-align: left;
     font-size: 20px;
     margin: 0;
     padding: 0;
     margin-left: 32px;
+    max-width: 60%;
   }
 
   .text-card-link {
@@ -729,6 +742,7 @@ button {
     margin-left: auto;
     border: none;
     font-size: 18px;
+    width: 20%;
 
   }
 
@@ -736,7 +750,7 @@ button {
   /* Section c */
 
   #section-c {
-    padding-top: 171px;
+    padding-top: 127px;
     padding-bottom: 110px;
 
   }
@@ -847,7 +861,7 @@ button {
     margin: 36px 2.46%;
   }
 
-  #section-f .card2 {
+  #section-f .card-middle {
     text-align: left;
     margin: 36px 3.5%;
   }
