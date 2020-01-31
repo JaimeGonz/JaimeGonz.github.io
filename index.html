@@ -193,40 +193,8 @@
       adv.classList.add('advanceS');
 
       createLink();
-      /*Captura de datos escrito en los inputs*/
-      saveStates();
-      /*Limpiando los campos o inputs*/
       i++;
-
       return true;
-    }
-
-
-    window.addEventListener("load", function (event) {
-      if (cards.innerHTML == "") {
-        var data = sessionStorage.getItem("html");
-        console.log("Entra al get: " + data);
-        cards.insertAdjacentHTML("beforeend", data);
-      }
-    });
-
-
-    function saveStates() {
-      console.log("Guarda estado actual")
-      sessionStorage.setItem("html", cards.innerHTML);
-      // var prueba = sessionStorage.getItem("html");
-      /*
-            window.addEventListener("onload", function (e) {
-              if (cards.innerHTML = "") {
-                document.getElementById("Cards-link").insertAdjacentHTML("beforeend", data);
-              }
-              // to do something (Remember, redirects or alerts are blocked here by most browsers):
-              var data = sessionStorage.getItem("html");
-              document.getElementById("Cards-link").insertAdjacentHTML("beforeend", data);
-              // to show a dialog (uncomment to test):
-              debugger;
-              return showADialog(e);
-            });*/
     }
 
     function validar1() {
@@ -303,59 +271,51 @@
       lista = document.getElementById("Cards-link");
       axios.post('https://rel.ink/api/links/', requestData)
         .then(function (response) {
-          // console.log(`Here is your shorted link: https://rel.ink/${response.data.hashid}`);
+          console.log(`Here is your shorted link: https://rel.ink/${response.data.hashid}`);
           document.getElementById("text").value = '';
 
           lista.insertAdjacentHTML("beforeend", "<div id='card_link" + i + "' class='card-link'>" +
             "<p id='URL" + i + "' class='title-card-link'>" + url + "</p>" +
-            "<input type='text' id='link" + i + "' class='text-card-link'" +
+            "<input type='text' id='link-" + Math.floor(Math.random() * 999999) + "' class='text-card-link'" +
             `value= 'https://rel.ink/${response.data.hashid}'` +
             ">" +
             "<button id='Copy" + i + "' type='button' class='btn btn-card-link'" +
             " onclick='return copy(this.id)'>Copy</button>" +
             "</div>");
+          cards = lista;
+          if (lista.innerHTML != null) {
+            console.log("Si la lista tiene datos, tons agrega:  " + lista.innerHTML);
+            sessionStorage.setItem("lista", lista.innerHTML);
+          }
         })
         .catch(function (error) {
           console.log(error);
         });
+
+      // // saveStates();
+      // console.log(sessionStorage.html);
+
     }
-
-    function refresh() {
-
-      if (true) {
-
-        console.log("TRUE");
-        debugger;
-        console.log("Hola amigo bonito");
-
-        // var tarjeta = new Object();
-        ALL_CARD = (document.getElementById(btn.parentNode.id)).outerHTML;
-        var card_link = btn.previousSibling.previousSibling;
-        // tarjeta.link = card_link.outerHTML;
-        // tarjeta.shortener = copyText.outerHTML;
-        // tarjeta.button = btn.outerHTML;
-        // console.log(hola);
-        // itemsArray.push(ALL_CARD);
-
-        contenido = contenido + ALL_CARD;
-        var a = contenido;
-        sessionStorage.setItem('Links', a);
-        itemsArray = sessionStorage.getItem('Links');
-        // itemsArray = sessionStorage.getItem('Links') ? JSON.parse(sessionStorage.getItem('Links')) : []
-
-        sessionStorage.setItem('Links', a);
-        const data = JSON.stringify(sessionStorage.getItem('Links'));
-        var a = document.getElementById('Cards-link');
-        console.log(a);
-        a.insertAdjacentHTML("beforeend", data);
-
-        // data.forEach(item => {
-        //   console.log("Hola");
-        //   liMaker(item);
-        // });
+    // Se ejecuta cuando se recarga la página
+    var data = "";
+    window.addEventListener("load", function (event) {
+      if (cards.innerHTML == "") { //Al iniciar si no tiene nada dentro:
+        // console.log("Entra al primer if");
+        if (sessionStorage.getItem('lista') != null) {
+          // console.log("Entra al if getItem: " + data);
+          data = sessionStorage.getItem("lista");
+          cards.insertAdjacentHTML("beforeend", data);
+        }
       }
+    });
 
-    }
+    // function saveStates() {
+    //   console.log("Guardando estado actual")
+    //   console.log(cards.innerHTML);
+    //   if (cards.innerHTML != null) {
+    //     sessionStorage.setItem("html", cards.innerHTML);
+    //   }
+    // }
   </script>
 
 
