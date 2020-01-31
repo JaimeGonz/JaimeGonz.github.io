@@ -242,22 +242,21 @@
     var ALL_CARD;
     var contenido = "";
     var a = "";
+    var when_btn_changes = "";
 
     function copy(clicked) {
+      when_btn_changes = document.getElementById("Cards-link");
       var btn = document.getElementById(clicked);
       // Button styles
       btn.classList.add('btn-copyOnClick');
       btn.innerHTML = "Copied!";
+      sessionStorage.setItem("lista", when_btn_changes.innerHTML); //Actualiza el html cuando le dan click al botón.
 
       // CopyFunction
       var card_shortener = btn.previousSibling.id;
-
       var copyText = document.getElementById(card_shortener);
       copyText.select();
       document.execCommand("copy");
-
-      // var shortener = btn.previousSibling;
-      // var card_shortener = shortener.id;
     }
 
 
