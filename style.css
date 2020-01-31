@@ -56,12 +56,12 @@ a {
 
 /*Mobile Styles*/
 
-#showcase {
+.topnav {
   display: flex;
   margin-top: 38px;
 }
 
-#showcase img {
+.topnav img {
   padding-left: 25px;
   width: 80%;
 }
@@ -181,6 +181,7 @@ button {
   height: 40px;
   margin-bottom: 37px;
   margin-top: 0px;
+  outline-style: none;
   width: 259px;
 }
 
@@ -205,6 +206,7 @@ button {
 }
 
 #section-b button {
+  outline-style: none;
   font-size: 18px;
   font-weight: 500;
   height: 48px;
@@ -449,7 +451,7 @@ button {
 
 /*Barra de Navegación*/
 
-#myLinks {
+.links {
   background: #3a3053;
   border-radius: 10px;
   font-size: 12px;
@@ -460,7 +462,8 @@ button {
 }
 
 /* El boton que saca la barra*/
-#showcase a.icon {
+
+.topnav a.icon {
   background: white;
   color: hsl(257, 7%, 63%);
   position: absolute;
@@ -526,6 +529,7 @@ button {
   align-items: center;
   background: #3a3053;
   border-radius: 50%;
+  bottom: 220px;
   display: flex;
   height: 88px;
   justify-content: center;
@@ -533,7 +537,6 @@ button {
   position: absolute;
   transform: translate(-50%);
   width: 88px;
-  bottom: 220px;
 }
 
 .web {
@@ -545,10 +548,24 @@ button {
 
 /* Web Design */
 
+
+
+@media (min-width: 768px) {}
+
+@media (min-width: 1370px) {
+  /* Para las cards */
+}
+
+/* @media (min-width: 768px) { */
 @media (min-width: 768px) {
 
   .web {
     display: flex;
+    justify-content: flex-start;
+    padding: 0px;
+    width: -webkit-fill-available;
+    width: -webkit-fill-available;
+    padding: 0 11.5%;
   }
 
   .active {
@@ -559,55 +576,304 @@ button {
     display: none;
   }
 
+  .topnav img {
+    padding-left: 0px;
+    margin-right: 0px;
+    width: auto;
+  }
 
+  .topnav--bold {
+    color: #9A999E;
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 30px;
+    /* padding-top: 2em; */
+    text-decoration: none;
+  }
+
+  .btnSup {
+    margin-top: -10px;
+  }
+
+  .topnav--btn {
+    color: white;
+    font-size: 15px;
+    font-weight: 900;
+    height: 55px;
+    width: 197px;
+    margin-left: 0px;
+    padding: 0 13px;
+  }
+
+  .login {
+    margin-left: auto;
+  }
+
+
+  /* Section a */
   #section-a {
     display: flex;
     flex-direction: row-reverse;
-    margin-left: 120px;
-    margin-bottom: 247px;
+    margin-bottom: 148px;
+    margin-left: 0px;
+    /* padding-left: 163px; */
+    padding-left: 11.5%;
+    padding-top: 75px;
+    text-align: left;
+  }
+
+  #section-a div {
+    width: 60%;
+  }
+
+  #section-a .title {
+    font-size: 77px;
+
+  }
+
+  #section-a .text {
+    font-size: 25px;
+    font-size: 22px;
+    padding-left: 0px;
+    padding-right: 30px;
   }
 
   .img_web {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
+  }
+
+  #section-a img {
+    transform: translate(65px, 0px);
+    height: auto;
+    width: 115%;
+  }
+
+  /* Section b */
+
+  #section-b {
+    width: 77%;
+    /* 74 */
+  }
+
+  #section-b div {
+    background-image: url(images/bg-shorten-desktop.svg);
+    flex-direction: row;
+    width: 100%;
+    height: 162px;
+    align-items: center;
+  }
+
+  #section-b .divActive {
+    padding-top: 0px;
+  }
+
+  #section-b button {
+    outline-style: none;
+    margin: 0px 63px 0 24px;
+    height: 60px;
+    border-radius: 10px;
+  }
+
+  #section-b input {
+    border-radius: 10px;
+    font-size: 20px;
+    width: 100%;
+    height: 60px;
+    margin: 0 0 0 63px;
+    padding-left: 33px;
+  }
+
+  #section-b .inputActive {
+    border-radius: 10px;
+    border: 3px solid #e27476;
+    width: 100%;
+    height: 60px;
+    margin: 0 0 0 63px;
+  }
+
+  .alertMessageActive {
+    color: #e27476;
+    /* display: block; */
+    font-size: 15px;
+    font-weight: 500;
+    font-style: italic;
+    left: 60px;
+    top: 210px;
+  }
+
+  .card-link {
+    display: flex;
+    width: 77%;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .btn-card-link {
+    width: 10%;
+    margin: 0 22px;
+    height: 40px;
+  }
+
+  .title-card-link {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    margin-left: 32px;
+  }
+
+  .text-card-link {
+    padding: 0;
+    margin-left: auto;
+    border: none;
+    font-size: 18px;
+
+  }
+
+
+  /* Section c */
+
+  #section-c {
+    padding-top: 171px;
+    padding-bottom: 110px;
+
+  }
+
+  #section-c .title2 {
+    font-size: 40px;
+  }
+
+  #section-c .text2 {
+    font-size: 18px;
+    padding: 0px 32%;
+    margin-top: 10px;
   }
 
   #section-c ul {
     display: flex;
+    flex-wrap: wrap;
+    padding: 95px 160px 0px 160px;
   }
 
   #section-c li {
     display: flex;
     width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   #section-c .card {
-    left: 12%;
-    transform: translate(0%);
+    left: 0%;
+    transform: translate(0px, 0px);
     margin-right: 26px;
+    height: 267px;
+    text-align: left;
+    margin: 0px;
+    width: 350px;
   }
+
+  #section-c .card1 {
+    transform: translate(-30px, -43px);
+  }
+
+  #section-c .card3 {
+    transform: translate(30px, 44px);
+    margin: 0 0 60px;
+  }
+
+  .title-card {
+    padding-top: 52px;
+    padding-left: 30px;
+    font-size: 22px;
+  }
+
+  .text-card {
+    line-height: 1.7;
+    font-size: 15px;
+    padding: 0px 31px;
+  }
+
+  .icon-container {
+    margin-left: 30px;
+    left: 0%;
+    transform: translate(0px, -5px);
+  }
+
+  .icon2-bottom {
+    bottom: 220px !important;
+  }
+
+  .line1 {
+    height: 8px;
+    width: 30px;
+    transform: translate(-205px, 190px);
+  }
+
+  .line2 {
+    height: 8px;
+    width: 30px;
+    transform: translate(175px, 190px);
+  }
+
+
 
   #section-d {
     background-image: url(images/bg-boost-desktop.svg);
-    height: 254px;
+    height: 252px;
+  }
 
+  #section-d .title {
+    font-size: 38px;
+    padding: 20px;
+  }
+
+  .btnSection-d {
+    margin: 5px;
   }
 
   .section-f {
-    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
+    width: auto;
+    height: 312px;
+    padding: 0 11.5%;
 
   }
 
-  .bold {
-    font-weight: 500;
-    font-size: 18px;
-    text-decoration: none;
-    color: #9A999E;
-    padding-top: 2em;
-    padding-left: 3em;
+  #section-f .card {
+    text-align: left;
+    margin: 36px 2.46%;
   }
+
+  #section-f .card2 {
+    text-align: left;
+    margin: 36px 3.5%;
+  }
+
+  #section-f .card-margin {
+    margin-left: 2.9%;
+    margin-right: 4%;
+  }
+
+  #section-f .img_logo {
+    height: 32px;
+    width: auto;
+    margin-right: 15.9%;
+  }
+
+  #section-f .icons {
+    margin-left: 3%;
+    /* margin-right: 10.5%; */
+    width: 190px;
+    margin-top: 60px;
+    margin-right: 0%;
+
+  }
+
+
+
+
 
 }
