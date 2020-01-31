@@ -305,6 +305,10 @@ button {
   outline: none;
   padding: 15px 0 15px 15px;
   width: 95.5%;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .btn-card-link {
@@ -560,15 +564,14 @@ button {
 /* Web Design */
 
 
-
-@media (min-width: 768px) {}
-
 @media (min-width: 1370px) {
   /* Para las cards */
 }
 
-/* @media (min-width: 768px) { */
-@media (min-width: 768px) {
+@media (min-width: 800px) {
+  .topnav--bold {
+    font-size: 15px;
+  }
 
   .web {
     display: flex;
@@ -595,8 +598,8 @@ button {
 
   .topnav--bold {
     color: #9A999E;
-    font-size: 15px;
     font-weight: 900;
+    font-size: 14px;
     margin-left: 30px;
     /* padding-top: 2em; */
     text-decoration: none;
@@ -620,45 +623,9 @@ button {
     margin-left: auto;
   }
 
-
-  /* Section a */
+  /* Section a*/
   #section-a {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-bottom: 148px;
-    margin-left: 0px;
-    /* padding-left: 163px; */
-    padding-left: 11.5%;
     padding-top: 75px;
-    text-align: left;
-  }
-
-  #section-a div {
-    width: 60%;
-  }
-
-  #section-a .title {
-    font-size: 77px;
-
-  }
-
-  #section-a .text {
-    font-size: 25px;
-    font-size: 22px;
-    padding-left: 0px;
-    padding-right: 30px;
-  }
-
-  .img_web {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-
-  #section-a img {
-    transform: translate(65px, 0px);
-    height: auto;
-    width: 115%;
   }
 
   /* Section b */
@@ -744,6 +711,56 @@ button {
     font-size: 18px;
     width: 20%;
 
+  }
+
+
+  .btn-card-link {
+    font-size: 13px;
+  }
+
+}
+
+/* @media (min-width: 768px) { */
+@media (min-width: 960px) {
+
+  /* Section a */
+  #section-a {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 148px;
+    margin-left: 0px;
+    /* padding-left: 163px; */
+    padding-left: 11.5%;
+    padding-top: 75px;
+    text-align: left;
+  }
+
+  #section-a div {
+    width: 60%;
+  }
+
+  #section-a .title {
+    font-size: 57px;
+
+  }
+
+  #section-a .text {
+    font-size: 25px;
+    font-size: 22px;
+    padding-left: 0px;
+    padding-right: 30px;
+  }
+
+  .img_web {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  #section-a img {
+    transform: translate(65px, 0px);
+    height: auto;
+    width: 115%;
   }
 
 
@@ -890,4 +907,16 @@ button {
 
 
 
+}
+
+@media (min-width: 1280px) {
+  #section-a .title {
+    font-size: 76px;
+  }
+}
+
+@media(min-width:1300px) {
+  #section-a .title {
+    font-size: 77px;
+  }
 }
