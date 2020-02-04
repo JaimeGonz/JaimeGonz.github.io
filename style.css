@@ -559,14 +559,7 @@ button {
 }
 
 
-
-
 /* Web Design */
-
-
-@media (min-width: 1370px) {
-  /* Para las cards */
-}
 
 @media (min-width: 800px) {
   .topnav--bold {
@@ -720,7 +713,6 @@ button {
 
 }
 
-/* @media (min-width: 768px) { */
 @media (min-width: 960px) {
 
   /* Section a */
@@ -806,11 +798,11 @@ button {
   }
 
   #section-c .card1 {
-    transform: translate(-30px, -43px);
+    transform: translate(0px, -65px);
   }
 
   #section-c .card3 {
-    transform: translate(30px, 44px);
+    transform: translate(0px, 65px);
     margin: 0 0 60px;
   }
 
@@ -837,15 +829,15 @@ button {
   }
 
   .line1 {
-    height: 8px;
-    width: 30px;
-    transform: translate(-205px, 190px);
+    height: 70px;
+    width: 8px;
+    transform: translate(-10px, 295px);
   }
 
   .line2 {
-    height: 8px;
-    width: 30px;
-    transform: translate(175px, 190px);
+    height: 70px;
+    width: 8px;
+    transform: translate(-10px, 627px);
   }
 
 
@@ -903,8 +895,22 @@ button {
 
   }
 
+}
 
+@media (min-width: 1020px) {
 
+  #section-c .card_detailed-records {
+    transform: translate(30px, 0px);
+  }
+
+  #section-c .card1 {
+    transform: translate(-30px, 0px);
+  }
+
+  .line1,
+  .line2 {
+    display: none;
+  }
 
 
 }
@@ -919,4 +925,37 @@ button {
   #section-a .title {
     font-size: 77px;
   }
+}
+
+@media(min-width:1370px) {
+
+  .line1,
+  .line2 {
+    display: block;
+    height: 8px;
+    width: 30px;
+  }
+
+  .line1 {
+    transform: translate(-205px, 190px);
+  }
+
+  .line2 {
+    transform: translate(175px, 190px);
+  }
+
+  #section-c .card_detailed-records {
+    transform: translate(0px, 0px);
+  }
+
+  #section-c .card1 {
+    transform: translate(-30px, -43px);
+  }
+
+  #section-c .card3 {
+    transform: translate(30px, 44px);
+    margin: 0 0 60px;
+  }
+
+
 }
