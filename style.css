@@ -765,6 +765,7 @@ button {
     background-position: right;
     background-position-x: 115%;
     background-position-y: 50px;
+    background-size: 60%;
   }
 
   #section-a div {
@@ -772,13 +773,15 @@ button {
   }
 
   #section-a .title {
-    font-size: 57px;
+    /* font-size: 57px; */
+    font-size: 45px;
 
   }
 
   #section-a .text {
-    font-size: 25px;
-    font-size: 22px;
+    /* font-size: 25px;
+    font-size: 22px; */
+    font-size: 16px;
     padding-left: 0px;
     padding-right: 155px;
   }
@@ -881,18 +884,6 @@ button {
     bottom: 220px !important;
   }
 
-  /* .line1 {
-    height: 70px;
-    transform: translate(-10px, 295px);
-    width: 8px;
-  }
-
-  .line2 {
-    height: 70px;
-    transform: translate(-10px, 627px);
-    width: 8px;
-  } */
-
   #section-d {
     background-image: url(images/bg-boost-desktop.svg);
     height: 252px;
@@ -952,16 +943,63 @@ button {
     font-size: 15px;
   }
 
+  #section-a {
+    background-size: 60%;
+    padding-bottom: 3.5%;
+  }
+
+  #section-a .title {
+    font-size: 47px;
+  }
+
   .line1,
   .line2 {
     display: none;
   }
 
+
+
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1106px) {
   #section-a .title {
-    font-size: 76px;
+    font-size: 54px;
+  }
+}
+
+@media (min-width: 1152px) {
+  #section-a .title {
+    font-size: 60px;
+  }
+
+  #section-a .text {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1120px) {
+  /* #section-a .title {
+    font-size: 50px;
+  } */
+}
+
+
+@media (min-width: 1229px) {
+
+  /* #section-a .title {
+    font-size: 60px;
+  } */
+}
+
+
+@media (min-width: 1280px) {
+
+  #section-a {
+    background-size: auto;
+  }
+
+  #section-a .title {
+    font-size: 70px;
   }
 }
 
@@ -974,27 +1012,36 @@ button {
 
 @media(min-width:1370px) {
 
-  /* .line1,
-  .line2 {
-  }
-
-  .line1 {
-  }
-
-  .line2 {
-  } */
 
   #section-c .card_detailed-records {
     transform: translate(0px, 0px);
   }
 
-  #section-c .card1 {
-    /* transform: translate(-30px, -43px); */
+  /* #section-c .card1 {
+    transform: translate(-30px, -43px);
   }
 
   #section-c .card3 {
-    /* transform: translate(30px, 44px);
-    margin: 0 0 60px; */
+    transform: translate(30px, 44px);
+    margin: 0 0 60px;
+  } */
+
+
+}
+
+@media(min-width:1760px) {
+  #section-a {
+    background-position-x: 105%;
+  }
+
+  #section-a .title {
+    font-size: 80px;
+  }
+
+
+  #section-a .text {
+    padding-right: 223px;
+    font-size: 25px;
   }
 
 
