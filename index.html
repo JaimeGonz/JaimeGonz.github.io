@@ -314,9 +314,7 @@
     var data = "";
     window.addEventListener("load", function (event) {
       if (cards.innerHTML == "") { //Al iniciar si no tiene nada dentro:
-        // console.log("Entra al primer if");
         if (sessionStorage.getItem('lista') != null) {
-          // console.log("Entra al if getItem: " + data);
           data = sessionStorage.getItem("lista");
           cards.insertAdjacentHTML("beforeend", data);
         }
