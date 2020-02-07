@@ -832,24 +832,23 @@ button {
 
   #section-c li {
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: center;
     width: 100%;
   }
 
-  #section-c li::after {
+  #section-c li::before {
     background-color: #2bcdcc;
     content: '';
     display: block;
     height: 10px;
-    margin-top: 160px;
+    margin-left: 70px;
+    margin-top: 105px;
     position: absolute;
     width: 50%;
     z-index: 1;
   }
 
   #section-c .card {
-    height: 267px;
     left: 0%;
     margin: 0 15px;
     text-align: left;
@@ -858,17 +857,16 @@ button {
     flex: 0 0 calc(33.3% - 30px);
     z-index: 2;
     position: relative;
-    height: max-content;
+    height: auto;
   }
 
   #section-c .card1 {
     margin-top: -30px;
-    height: max-content;
+
   }
 
   #section-c .card3 {
     margin-top: 30px;
-    height: max-content;
   }
 
   .title-card {
@@ -987,6 +985,14 @@ button {
 
   #section-a .text {
     font-size: 18px;
+  }
+}
+
+
+@media (min-width: 1226px) {
+
+  #section-c .card {
+    height: 267px;
   }
 }
 
