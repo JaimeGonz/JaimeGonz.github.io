@@ -187,7 +187,6 @@
 
     //obteniendo el valor que se puso en el campo text del formulario
     function validar() {
-
       Texto = document.getElementById("text").value;
       var container = document.getElementById("shortener");
       var intro = document.getElementById('text');
@@ -284,6 +283,7 @@
       const requestData = {
         url
       }
+
       lista = document.getElementById("Cards-link");
       axios.post('https://rel.ink/api/links/', requestData)
         .then(function (response) {
@@ -301,7 +301,6 @@
             "</div>");
           cards = lista;
           if (lista.innerHTML != null) {
-            console.log("Si la lista tiene datos, agrega:  " + lista.innerHTML);
             sessionStorage.setItem("lista", lista.innerHTML);
           }
         })
